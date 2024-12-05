@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(220, 220, 220);
+}
+
+header {
+    background-color: aqua;
+}
+
+#post {
+    background-color: brown;
+}
+
+footer{
+
+    background-color: black;
+    color: white;
+}
