@@ -2,3 +2,29 @@ header{
     font-size: 30px;
     color: blue;
 }
+form{
+    display: flex;
+    flex-direction: column;
+    max-width: 120px;
+    padding: 40px;
+}
+form #userId{
+    /* Masquer les flèches de défilement dans les navigateurs Webkit (Chrome, Safari) */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    }
+}
+form #contenu {
+   height: 40px;
+   width:400px; 
+}
+form #titre{
+
+width: 250px;
+}
+.champs{
+    padding: 10px;;
+}
