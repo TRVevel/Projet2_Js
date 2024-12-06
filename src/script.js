@@ -1,42 +1,31 @@
-try {
-    let reponse = await fetch("https://jsonplaceholder.typicode.com/posts", { method: "GET" });
-    let posts = await reponse.json();
-    console.log(posts);
-    let identifiantComp = 0;
+// Fonction pour récupérer les posts
+async function fetchPosts() {
+    const postsResponse = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const posts = await postsResponse.json();
+    const postsContainer = document.getElementById('posts');
 
-    posts.forEach((post) => {
-        if (identifiantComp != post.userId) {
-            fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`)
-                .then(reponseUserInfo => {
-                    reponseUserInfo.json().then(data => {
-                        let userInfo = data;
-                        console.log(userInfo.name+ " " + userInfo.id)
-                    })
-                })
+    for (const post of posts) {
+        const userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`);
+        const user = await userResponse.json();
 
+        // Créer un élément pour chaque post
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('post');
 
-            // let reponseUserInfo = await fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`, { method: "GET" });
-            // let userInfo = await reponseUserInfo.json();
-
-            console.log(typeof post.userId);
-            console.log(typeof identifiantComp);
-            console.log("postid " + post.userId);
-
-            console.log("IC avant " + identifiantComp);
-            identifiantComp = post.userId;
-            console.log("IC apres " + identifiantComp);
-        }
-        // let titrePost = post.title;
-        // let contenuePost = post.body;
-
-        // console.log(titrePost);
-        // console.log(contenuePost);
-        // let postElement = document.createElement("p");
-        // postElement.textContent = `userID: ${post.userId} Titre: ${post.title} Contenu: ${post.body}`
-        // document.getElementById("post").appendChild(postElement);
+        // Ajouter le titre et le contenu du post
+        postDiv.innerHTML = `
+            <h3>${post.title}</h3>
+            <p>${post.body}</p>
+            <p class="user-link">
+                <strong>Utilisateur : </strong><a href="https://jsonplaceholder.typicode.com/posts?userId=${post.userId}" target="_blank">${user.name}</a>
+            </p>
+            <a href="https://jsonplaceholder.typicode.com/posts/${post.id}" target="_blank">Voir le post complet</a>
+        `;
+        
+        // Ajouter le post à la page
+        postsContainer.appendChild(postDiv);
     }
-    );
-} catch (err) {
-    console.error(err);
 }
-console.log(userInfo);
+
+// Appel de la fonction pour charger les posts
+fetchPosts();
