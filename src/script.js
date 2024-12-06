@@ -14,11 +14,11 @@ async function fetchPosts() {
 
         // Ajouter le titre et le contenu du post
         postDiv.innerHTML = `
-            <h3>${post.title}</h3>
-            <p>${post.body}</p>
-            <p class="user-link">
+        <p class="user-link">
                 <strong>Utilisateur : </strong><a href="https://jsonplaceholder.typicode.com/posts?userId=${post.userId}" target="_blank">${user.name}</a>
             </p>
+            <h3>Titre: ${post.title}</h3>
+            <p>${post.body}</p>
             <a href="https://jsonplaceholder.typicode.com/posts/${post.id}" target="_blank">Voir le post complet</a>
         `;
         
