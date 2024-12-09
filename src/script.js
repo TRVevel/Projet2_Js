@@ -1,5 +1,3 @@
-// Fonction pour récupérer les posts
-let userUserId;
 
 async function fetchPosts() {
     let postsResponse = await fetch('https://jsonplaceholder.typicode.com/posts');
@@ -9,11 +7,6 @@ async function fetchPosts() {
     for (let post of posts) {
         let userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${post.userId}`);
         let user = await userResponse.json();
-        for (let id in utilisateurExo) {
-            localStorage.setItem(id, post.userId)
-            console.log(id, " : ", utilisateurExo[key]);
-        }
-        localStorage.setItem("1", post.userId)
 
         // Créer un élément pour chaque post
         let postDiv = document.createElement('div');
@@ -22,13 +15,13 @@ async function fetchPosts() {
         // Ajouter le titre et le contenu du post
         postDiv.innerHTML = `
         <p class="user-link">
-                <strong>Utilisateur : </strong><a href="./page3.html" target="_blank">${user.name}</a>
+                <strong>Utilisateur : </strong><a href="https://jsonplaceholder.typicode.com/posts?userId=${post.userId}" target="_blank">${user.name}</a>
             </p>
             <h3>Titre: ${post.title}</h3>
             <p>${post.body}</p>
-            <a href="https://jsonplaceholder.typicode.com/posts/${post.id}" target="_blank">Voir le post complet</a>
-        `;
-
+            <a href="./page3.html?postId=${post.id}" target="_blank">Voir le post complet</a>`;
+        
+        
         // Ajouter le post à la page
         postsContainer.appendChild(postDiv);
     }
