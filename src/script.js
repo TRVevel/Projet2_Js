@@ -19,9 +19,10 @@ async function fetchPosts() {
             </p>
             <h3>Titre: ${post.title}</h3>
             <p>${post.body}</p>
-            <a href="https://jsonplaceholder.typicode.com/posts/${post.id}" target="_blank">Voir le post complet</a>
+            <a href="./page2.html" target="_blank">Voir le post complet</a>
+            
         `;
-        
+
         // Ajouter le post à la page
         postsContainer.appendChild(postDiv);
     }
