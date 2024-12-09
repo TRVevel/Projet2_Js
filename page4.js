@@ -7,20 +7,30 @@ Array.from(formulaire.elements).forEach((champ) =>
   })
 );
 formulaire.addEventListener("submit", function (event) {
-  event.preventDefault();
+  console.log("'Envoyer' cliqué");
+
+  //   event.preventDefault();
   form.utilisateurId = document.getElementById("userId").value;
   form.utilisateurTitre = document.getElementById("titre").value;
   form.utilisateurContenu = document.getElementById("contenu").value;
 });
 console.log(form);
 
-fetch("https://jsonplaceholder.typicode.com/posts", {
-  method: "POST",
-  body: JSON.stringify({}),
-  headers: {
-    "Content-type": "application/json; charset=UTF-8",
-  },
-})
-  .then((response) => response.json())
-  .then((json) => console.log(json));
-// alert("Post envoyé !");
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify({
+    userId: form.utilisateurId,
+    title: form.utilisateurTitre
+    contenu: form.utilisateurContenu
+    }),
+    headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+    },
+   })
+    .then((response) => response.json())
+    .then((json) => console.log(json));
+
+
+return response.json();
+
+alert("Post envoyé !");
