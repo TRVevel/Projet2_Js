@@ -1,5 +1,7 @@
 
 
+
+
 async function fetchPosts() {
     let queryString = window.location.search;
     console.log(queryString);
@@ -17,12 +19,11 @@ async function fetchPosts() {
         let userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${posts.userId}`);
         let user = await userResponse.json();
 
-        // Créer un élément pour chaque post
+        // Creer un élément pour chaque post
         let postDiv = document.createElement('div');
         postDiv.classList.add('post');
         let commentsResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
         let comments = await commentsResponse.json();
-        
         
        
 
@@ -33,29 +34,39 @@ async function fetchPosts() {
             </p>
             <h3>Titre: ${posts.title}</h3>
             <p>${posts.body}</p>
+            <p id="deleteButton">Supprimer le post</p>
             <h3>Commentaires:</h3>
             `;
             for(let comment of comments)(
                 postDiv.innerHTML =postDiv.innerHTML + `
                  <p>${comment.email}: ${comment.body} </p>
             `);
+
             function deletePost(){
+                let reponseDelete =  fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+                    method: 'DELETE',
+                  });
+                  if( reponseDelete)(
+                     console.log(`Post ${posts.id}, supprimer avec succées`)
+                   ); else(
+                     console.log("error")
+                   )
+             }
+            
+            let deleteButton= document.createElement("p");
+            deleteButton.textContent="Supprimer le post";
+            postDiv.appendChild(deleteButton);
+            deleteButton.addEventListener("click",deletePost)
            
-                console.log("test")
-                
-                }
-                postDiv.innerHTML = postDiv.innerHTML + `
-                <a href="javascript:void(0);" onclick="deletePost()">Supprimer</a>
-            `;
-            
-            
-            
         
         
-        // Ajouter le post à la page
+        //Ajouter le post a la page
         postsContainer.appendChild(postDiv);
+
+        
  
 }
 
 // Appel de la fonction pour charger les posts
 fetchPosts();
+
