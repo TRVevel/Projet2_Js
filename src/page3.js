@@ -42,11 +42,11 @@ async function fetchPosts() {
                  <p>${comment.email}: ${comment.body} </p>
             `);
 
-            function deletePost(){
-                let reponseDelete =  fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
+           async function deletePost(){
+                let reponseDelete = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
                     method: 'DELETE',
                   });
-                  if( reponseDelete)(
+                  if( reponseDelete.ok)(
                      console.log(`Post ${posts.id}, supprimer avec succées`)
                    ); else(
                      console.log("error")
