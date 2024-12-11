@@ -2,25 +2,35 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0 0 0 0;
+    display: flex;
+    flex-direction: column;
     background-color: rgb(225, 225, 225);
-    max-height: 100vh;
+    min-height: 100vh;
 }
 
 header {
     color: white;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.501);
-    border: 1px solid black;
     align-items: center;
     justify-content: space-between;
-    align-items: center;
     display: flex;
+    padding:0 10px ;
     margin: 0 0 0 0;
-    background: linear-gradient(320deg, rgb(225, 225, 225), black)
+    background: linear-gradient(320deg, rgb(200, 200, 200), black)
+}
+header *{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+ 
+}
+h1 a, h1{
+    font-size: 32px;
+ 
 }
 
-
 .post {
-    margin-bottom: 30px;
+    margin-bottom: auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -47,7 +57,12 @@ header {
 }
 
 footer {
-    border: 1px solid black;
+    
+    font-size: 0.8rem;
+    min-width: 100%;
+    position: fixed;
+    padding: 0;
+    bottom:0;
     color: white;
-    background: linear-gradient(70deg, rgb(0, 0, 0), rgb(225, 225, 225))
+    background: linear-gradient(70deg, rgb(0, 0, 0), rgb(200, 200, 200))
 }

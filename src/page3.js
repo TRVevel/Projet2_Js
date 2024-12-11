@@ -30,11 +30,10 @@ async function fetchPosts() {
         // Ajouter le titre et le contenu du post
         postDiv.innerHTML = `
         <p class="user-link">
-                <strong>Utilisateur : </strong><a href="https://jsonplaceholder.typicode.com/posts?userId=${posts.userId}" target="_blank">${user.name}</a>
+                <strong>Utilisateur : </strong><a href="./page2.html?userId=${posts.userId}" target="_blank">${user.name}</a>
             </p>
             <h3>Titre: ${posts.title}</h3>
-            <p>${posts.body}</p>
-            <p id="deleteButton">Supprimer le post</p>
+            <p>${posts.body}</p>  
             <h3>Commentaires:</h3>
             `;
             for(let comment of comments)(
@@ -66,7 +65,8 @@ async function fetchPosts() {
         
  
 }
-
+// let homeButton= document.getElementById("home");
+// homeButton.addEventListener("onClick", )
 // Appel de la fonction pour charger les posts
 fetchPosts();
 
