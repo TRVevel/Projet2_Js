@@ -20,7 +20,7 @@ async function fetchPosts() {
             <h3>Titre: ${post.title}</h3>
             <p>${post.body}</p><h3>${post.title}</h3>
             <p>${post.body}</p>
-            <a href="./page2.html" target="_blank">Voir le post complet</a>
+            <a href="./user-posts.html?userid=${post.userId}" target="_blank">Voir le post complet</a>
             
         `;
 
