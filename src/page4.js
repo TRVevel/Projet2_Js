@@ -1,10 +1,11 @@
-let isValid = true;
+let indicUser = true;
+let indicTitre = true;
+let indicContenu = true;
 //Sélection du formulaire et tous ses éléments
 const formulaire = document.getElementById("postForm");
 
 Array.from(formulaire.elements).forEach((champ) =>
   champ.addEventListener("change", function () {
-    isValid = true;
     //Récupération des valeurs des champs
     const userId = parseInt(document.getElementById("userId").value);
     const title = document.getElementById("title").value;
@@ -15,40 +16,35 @@ Array.from(formulaire.elements).forEach((champ) =>
       if (isNaN(userId) || userId <= 0 || userId > 100) {
         document.getElementById("userIdError").textContent =
           "Le UserId doit être un nombre compris entre 0 et 100 !";
-        isValid = false;
+        indicUser = false;
         return; //empêcher de continuer
-      }
-
-      //Test/validation du champs "titre"
-      if (champ.id === "title") {
-        if (title.length < 5) {
-          document.getElementById("titleError").textContent =
-            "Le titre du post doit comporter au moins 5 caractères !";
-          isValid = false;
-          return;
-        }
-      }
-      //Test/validation du champs "contenu"
-      if (champ.id === "body") {
-        if (body.length < 15) {
-          document.getElementById("titleError").textContent =
-            "Le contenu du post doit comporter au moins 15 caractères !";
-          isValid = false;
-          return;
-        }
-      }
-      // Si le champ est valide, on passe au suivant
-      if (isValid) {
-        // Si ce n'est pas le dernier champ, passe au champ suivant
-        if (index + 1 < champs.length) {
-          champs[index + 1].focus();
-        } else {
-          // Si c'est le dernier champ, vous pouvez soumettre le formulaire ou exécuter une autre action
-          console.log("Le formulaire est prêt à être soumis.");
-        }
       } else {
-        // Si le champ n'est pas valide, on reste sur le même champ
-        champ.focus();
+        indicUser = true;
+        document.getElementById("userIdError").textContent = "";
+      }
+    }
+    //Test/validation du champs "titre"
+    if (champ.id === "title") {
+      if (title.length < 5) {
+        document.getElementById("titleError").textContent =
+          "Le titre du post doit comporter au moins 5 caractères !";
+        indicTitre = false;
+        return;
+      } else {
+        indicTitre = true;
+        document.getElementById("titleError").textContent = "";
+      }
+    }
+    //Test/validation du champs "contenu"
+    if (champ.id === "body") {
+      if (body.length < 15) {
+        document.getElementById("bodyError").textContent =
+          "Le contenu du post doit comporter au moins 15 caractères !";
+        indicContenu = false;
+        return;
+      } else {
+        indicContenu = true;
+        document.getElementById("bodyError").textContent = "";
       }
     }
   })
@@ -70,7 +66,9 @@ document
 
     // Validation des champs
 
-    if (!isValid) {
+    if (!indicUser || !indicTitre || !indicContenu) {
+      document.getElementById("infirmationMessage").style.display = "block";
+      document.getElementById("confirmationMessage").style.display = "none";
       return; // Si le formulaire n'est pas valide, on arrête l'envoi
     }
 
@@ -93,6 +91,7 @@ document
       .then((data) => {
         // Affichage du message de confirmation
         document.getElementById("confirmationMessage").style.display = "block";
+        document.getElementById("infirmationMessage").style.display = "none";
         console.log("Post créé avec succès", data);
       })
       .catch((error) => {
