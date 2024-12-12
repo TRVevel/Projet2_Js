@@ -18,7 +18,7 @@ async function fetchPosts() {
         // Ajouter le titre et le contenu du post
         postDiv.innerHTML = `
             <p class="user-link">
-                <strong>Utilisateur : </strong><a href="./page2.html?userId=${post.userId}" target="_blank">${user.name}</a>
+                <strong>Utilisateur : </strong><a href="./page2.html?userId=${post.userId}" >${user.name}</a>
             </p>
             <h3>Titre: ${post.title}</h3>
             <p>${post.body}</p>

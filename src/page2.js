@@ -1,6 +1,6 @@
 function getUserIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
-    return params.get('userid');
+    return params.get('userId');
 }
 function displayPosts(posts) {
 
@@ -18,10 +18,21 @@ function displayPosts(posts) {
         <p class="user-link">
                 <strong>Utilisateur : </strong><p>${user.name}</p>
             </p>
-            <h2>titre:${post.title}</h2>
+            <h2>Titre: ${post.title}</h2>
             <p>${post.body}</p>
         `;
         postsContainer.appendChild(postElement);
+
+        // Empêcher la propagation du clic pour le lien utilisateur
+        let userLink = postElement.querySelector('.user-link');
+        userLink.addEventListener('click', (event) => {
+        event.stopPropagation(); // Empêche le clic de remonter jusqu'à postElement
+        });
+
+        postElement.addEventListener('click', () => {
+            // Rediriger vers la page du post complet
+            window.location.href = `./page3.html?postId=${post.id}`;
+        });
 
     });
 }
