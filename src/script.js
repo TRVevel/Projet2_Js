@@ -17,17 +17,23 @@ async function fetchPosts() {
 
         // Ajouter le titre et le contenu du post
         postDiv.innerHTML = `
-        <p class="user-link">
+            <p class="user-link">
                 <strong>Utilisateur : </strong><a href="./page2.html?userId=${post.userId}" target="_blank">${user.name}</a>
             </p>
             <h3>Titre: ${post.title}</h3>
             <p>${post.body}</p>
             `;
 
-            postDiv.addEventListener('click', () => {
-                // Rediriger vers la page du post complet
-                window.location.href = `./page3.html?postId=${post.id}`;
-            });
+        // Empêcher la propagation du clic pour le lien utilisateur
+        let userLink = postDiv.querySelector('.user-link');
+        userLink.addEventListener('click', (event) => {
+        event.stopPropagation(); // Empêche le clic de remonter jusqu'à postDiv
+        });
+
+        postDiv.addEventListener('click', () => {
+            // Rediriger vers la page du post complet
+            window.location.href = `./page3.html?postId=${post.id}`;
+        });
         
         
         // Ajouter le post à la page
