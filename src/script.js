@@ -10,7 +10,10 @@ async function fetchPosts() {
 
         // Créer un élément pour chaque post
         let postDiv = document.createElement('div');
+        postDiv.setAttribute("id",`post-${post.id}`);
         postDiv.classList.add('post');
+       
+
 
         // Ajouter le titre et le contenu du post
         postDiv.innerHTML = `
@@ -19,11 +22,17 @@ async function fetchPosts() {
             </p>
             <h3>Titre: ${post.title}</h3>
             <p>${post.body}</p>
-            <a href="./page3.html?postId=${post.id}" target="_blank">Voir le post complet</a>`;
+            `;
+
+            postDiv.addEventListener('click', () => {
+                // Rediriger vers la page du post complet
+                window.location.href = `./page3.html?postId=${post.id}`;
+            });
         
         
         // Ajouter le post à la page
         postsContainer.appendChild(postDiv);
+        
     }
 }
 

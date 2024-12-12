@@ -45,17 +45,26 @@ async function fetchPosts() {
                 let reponseDelete = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`, {
                     method: 'DELETE',
                   });
-                  if( reponseDelete.ok)(
-                     console.log(`Post ${posts.id}, supprimer avec succées`)
-                   ); else(
+                  if( reponseDelete.ok){
+                     console.log(`Post ${posts.id}, supprimé avec succées`)
+                     let messageDelete= document.getElementById("confirmationDelPost")
+                     messageDelete.textContent="Post supprimé avec succès"
+                     postDiv.remove();
+                  } else{
                      console.log("error")
-                   )
+                     messageDelete.textContent="Le Post n'a pas pus être supprimer"
+                  }
              }
             
             let deleteButton= document.createElement("p");
             deleteButton.textContent="Supprimer le post";
+            deleteButton.setAttribute("id",`supPost`);
             postDiv.appendChild(deleteButton);
+            
             deleteButton.addEventListener("click",deletePost)
+
+            
+            
            
         
         
