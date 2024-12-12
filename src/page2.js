@@ -1,6 +1,6 @@
 function getUserIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
-    return params.get('userid');
+    return params.get('userId');
 }
 function displayPosts(posts) {
 
