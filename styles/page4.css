@@ -1,4 +1,14 @@
-
+video {
+  opacity: 35%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index:-100;
+  padding: 0;
+  bottom:0;
+}
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -27,7 +37,7 @@ header *{
 
 }
 form{
-  margin: 0 0 0 120px;
+  margin-left: 120px;
 }
 #postForm #userId{
   width: 50px;
@@ -65,10 +75,16 @@ button:hover {
   transition: 0.3;
 }
 .confirmation {
-  margin-top: 20px;
+  margin-left: 120px;
   padding: 10px;
-  background-color: #e7f7e7;
   color: green;
+  border: 1px solid #d4edda;
+  border-radius: 4px;
+}
+.infirmation {
+  margin-left: 120px;
+  padding: 10px;
+  color: red;
   border: 1px solid #d4edda;
   border-radius: 4px;
 }
@@ -85,7 +101,7 @@ footer {
     color: white;
     background: linear-gradient(70deg, rgb(0, 0, 0), rgb(225, 225, 225))
 }
-}
+
 .formulaire {
   padding: 20px;
   max-width: 100%;
