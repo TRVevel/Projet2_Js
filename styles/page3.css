@@ -27,20 +27,31 @@ header {
     display: flex;
     padding:0 40px ;
     margin: 0 0 0 0;
-    background: linear-gradient(320deg, rgb(200, 200, 200), black)
+    background: linear-gradient(320deg, rgb(220, 220, 230), rgb(20, 25, 45))
 }
-header *{
+
+#home:hover{
+    text-decoration: underline;
+    
+}
+header #newPostButton{
     color: white;
     text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(140, 150, 190);
     font-size: 16px;
+    transition: transform 0.1s ease-in-out;
  
 }
-header *:hover{
-    text-decoration: underline;
- 
+header #newPostButton:hover{
+    position: relative;
+    transform: translateY(-2px); /* Déplace l'élément de 200px vers la droite */
 }
 h1 a, h1{
     font-size: 32px;
+    color: white;
+    
     
 }
 #confirmationDelPost{
@@ -101,7 +112,7 @@ footer {
     padding: 0;
     bottom:0;
     color: white;
-    background: linear-gradient(70deg, rgb(0, 0, 0), rgb(200, 200, 200))
+    background: linear-gradient(70deg, rgb(30, 30, 60), rgb(200, 200, 225))
 }
 footer *{
     margin-left: 5px;

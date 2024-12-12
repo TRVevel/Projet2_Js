@@ -29,7 +29,7 @@ header {
     display: flex;
     padding:0 40px ;
     margin: 0 0 0 0;
-    background: linear-gradient(320deg, rgb(200, 200, 200), black)
+    background: linear-gradient(320deg, rgb(220, 220, 230), rgb(20, 25, 45))
 }
 header *{
     color: white;
@@ -38,18 +38,21 @@ header *{
  
 }
 header a{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(140, 150, 190);
     font-size: 16px;
- 
+    transition: transform 0.1s ease-in-out;
 }
 header a:hover{
-    text-decoration: underline;
- 
+    position: relative;
+    transform: translateY(-2px); /* Déplace l'élément de 200px vers la droite */
 }
 #posts{
     margin: 10px 10px 40px 10px ;
 }
 .post {
-    background-color: rgba(220, 220, 220, 0.85);
+    background-color: rgba(250, 250, 250, 0.9);
     margin-bottom: auto;
     padding: 20px;
     border: 1px solid #0000002c;
@@ -77,7 +80,7 @@ header a:hover{
 }
 
 .user-link {
-    display: block;
+    display: inline;
     margin-top: 10px;
     font-size: 14px;
 }
@@ -90,7 +93,7 @@ footer {
     padding: 0;
     bottom:0;
     color: white;
-    background: linear-gradient(70deg, rgb(0, 0, 0), rgb(200, 200, 200))
+    background: linear-gradient(70deg, rgb(30, 30, 60), rgb(200, 200, 225))
 }
 
 footer *{

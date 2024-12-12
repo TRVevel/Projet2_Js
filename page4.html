@@ -12,27 +12,26 @@
     <source src="./styles/ressources/background_Video5.mp4" type="video/mp4">
   </video>
     <header>
-        <h1><a href="./index.html">Reseau Social</a></h1>
+        <h1><a href="./index.html">Réseau Social</a></h1>
     </header>
- 
+ <main>
   <h2>Formulaire de création d'un nouveau Post</h2>
   <form id="postForm">
     <label for="userId">UserId :</label>
-    <input [type="number"]::-webkit-inner-spin-button{-webkit-appearance:none} id="userId" name="userId">
+    <input [type="number"]::-webkit-inner-spin-button{-webkit-appearance:none} placeholder="ex: 18" id="userId" name="userId">
     <span id="userIdError" class="error"></span>
     <br>
 
     <label for="title">Titre : </label>
-    <input type="text" id="title" name="title" required>
+    <input type="text" id="title" placeholder="ex: Je vais déposer mon CV à McDo hein"name="title" required>
     <span id="titleError" class="error"></span>
     <br>
 
     <div>
         <label for="body">Contenu : </label>
     </div>
-        <textarea id="body" name="body" required></textarea>
+        <textarea id="body" placeholder="ex: Sérieux ce site tient avec de la colle UwHU mais bon, c'est la magie du codage je suppose..." name="body" required></textarea>
         <span id="bodyError" class="error"></span>
-   
     <br>
 
     <button type="submit">Créer le Post</button>
@@ -43,10 +42,11 @@
   </div>
   <div id="infirmationMessage" class="infirmation" style="display: none;">
     <strong>Le post n'a pas été créé. Revoyez vos données ! !</strong>
-  </div>  
+  </div> 
+</main> 
   <script src="./src/page4.js"></script>  
   <footer>
-    <p>&copy Quentin, Dimitry, Mohammed</p>
+    <p>&copy 2024 Quentin, Dimitry, Mohammed. Tous droits réservés.</p>
 </footer>
   </body>
 </html>
