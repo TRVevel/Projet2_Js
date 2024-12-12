@@ -3,34 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liste des postes - Page 4</title>
-    <link rel="stylesheet" href="./page4.css">    
+    <title>Formulaire de création d'un Post</title>
+    <link rel="stylesheet" href="./styles/page4.css">
+
 </head>
 <body>
-    <header>Formulaire de création d'un post</header>
+    <header>
+        <h1><a href="./index.html">Reseau Social</a></h1>
+    </header>
+ 
+  <h2>Formulaire de création d'un nouveau Post</h2>
+  <form id="postForm">
+    <label for="userId">UserId :</label>
+    <input [type="number"]::-webkit-inner-spin-button{-webkit-appearance:none} id="userId" name="userId">
+    <span id="userIdError" class="error"></span>
     <br>
-    <form id="monFormulaire">
-    <div class = "champs">
-        <label for="userId ">User Id :</label>
-        <input type="number" id="userId" name="userId">
-    </div>
 
-    <div class = "champs">
-        <label for="titre ">Titre :</label>
-        <input type="titre" id="titre" name="titre">
-    </div>
-    
-    <div class = "champs">
-        <label for="contenu ">Contenu :</label>
-        <input type="contenu" id="contenu" name="contenu">
-    </div>
-    <div class="champs">
-        <button type="submit">Envoyer</button>
-    </div>
-    </form>
-   
-      <script type="module" src="./page4.js"></script>
-   
+    <label for="title">Titre : </label>
+    <input type="text" id="title" name="title" required>
+    <span id="titleError" class="error"></span>
+    <br>
 
-</body>
+    <div>
+        <label for="body">Contenu : </label>
+    </div>
+        <textarea id="body" name="body" required></textarea>
+        <span id="bodyError" class="error"></span>
+   
+    <br>
+
+    <button type="submit">Créer le Post</button>
+  </form>
+
+  <div id="confirmationMessage" class="confirmation" style="display: none;">
+    <strong>Le post a été créé avec succès !</strong>
+  </div>
+  <script src="./src/page4.js"></script>  
+  <footer>
+    <p>&copy Quentin, Dimitry, Mohammed</p>
+</footer>
+  </body>
 </html>

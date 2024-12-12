@@ -2,45 +2,44 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0 0 0 0;
-    background-color: rgb(233, 237, 249);
-    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(225, 225, 225);
+    min-height: 100vh;
 }
 
 header {
     color: white;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.501);
-    border: 1px solid black;
     align-items: center;
     justify-content: space-between;
-    align-items: center;
     display: flex;
     margin: 0 0 0 0;
-    background: linear-gradient(320deg, rgb(225, 225, 225), black);
-    padding: 20px;
+    background: linear-gradient(320deg, rgb(200, 200, 200), black)
+}
+header *{
+    padding:0 10px;
+    text-decoration: none;
+    font-size: 16px;
+ 
 }
 
 
 .post {
-    margin-bottom: 30px;
+    margin-bottom: auto;
     padding: 20px;
-    border: 1px solid #02232b;
-    background-color: rgb(218, 236, 234);
+    border: 1px solid #ccc;
     border-radius: 8px;
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .post h3 {
     margin-top: 0;
-    font-style: italic;
 }
 
 .post a {
-    color: darkblue;
+    color: #007bff;
     text-decoration: none;
-}
-p.user-link{
-    font-size: 20px;
-    font-weight: bold;
 }
 
 .post a:hover {
@@ -54,8 +53,11 @@ p.user-link{
 }
 
 footer {
-    border: 1px solid black;
+    font-size: 0.8rem;
+    min-width: 100%;
+    position: fixed;
+    padding: 0;
+    bottom:0;
     color: white;
-    font-style: italic;
     background: linear-gradient(70deg, rgb(0, 0, 0), rgb(225, 225, 225))
 }
