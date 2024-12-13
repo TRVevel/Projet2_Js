@@ -1,4 +1,5 @@
 
+//Déclaration d'une fetch asynchrone - GET
 async function fetchPosts() {
     let postsResponse = await fetch('https://jsonplaceholder.typicode.com/posts');
     let posts = await postsResponse.json();
@@ -13,8 +14,6 @@ async function fetchPosts() {
         postDiv.setAttribute("id",`post-${post.id}`);
         postDiv.classList.add('post');
        
-
-
         // Ajouter le titre et le contenu du post
         postDiv.innerHTML = `
             <p class="user-link">
@@ -35,12 +34,10 @@ async function fetchPosts() {
             window.location.href = `./page3.html?postId=${post.id}`;
         });
         
-        
         // Ajouter le post à la page
         postsContainer.appendChild(postDiv);
         
     }
 }
-
 // Appel de la fonction pour charger les posts
 fetchPosts();

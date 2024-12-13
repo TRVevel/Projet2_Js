@@ -22,9 +22,7 @@ async function fetchPosts() {
     //avec recuperation des commentaire via requete Get
     let commentsResponse = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
     let comments = await commentsResponse.json();
-        
-       
-
+  
         // Ajouter le titre et le contenu du post
         postDiv.innerHTML = `
           <p class="user-link">
@@ -63,7 +61,6 @@ async function fetchPosts() {
 
         //Ajouter le post a la page
         postsContainer.appendChild(postDiv);
-
 }
 fetchPosts();
 

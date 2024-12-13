@@ -1,3 +1,4 @@
+//Initialisation des indicateurs pour test envoie POST
 let indicUser = true;
 let indicTitre = true;
 let indicContenu = true;
@@ -65,7 +66,6 @@ document
     const body = document.getElementById("body").value;
 
     // Validation des champs
-
     if (!indicUser || !indicTitre || !indicContenu) {
       document.getElementById("infirmationMessage").style.display = "block";
       document.getElementById("confirmationMessage").style.display = "none";

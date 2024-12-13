@@ -11,7 +11,6 @@ function displayPosts(posts) {
         let userResponse = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
         let user = await userResponse.json();
 
-
         const postElement = document.createElement('div');
         postElement.className = 'post';
         postElement.innerHTML = `
@@ -33,10 +32,8 @@ function displayPosts(posts) {
             // Rediriger vers la page du post complet
             window.location.href = `./page3.html?postId=${post.id}`;
         });
-
     });
 }
-
 
 async function fetchPosts() {
     try {
@@ -46,9 +43,7 @@ async function fetchPosts() {
     } catch (error) {
         postsContainer.innerHTML = `<p>${error}</p>`;
     }
-
 }
-
 
 const userId = getUserIdFromUrl();
 const postsContainer = document.getElementById('posts');
