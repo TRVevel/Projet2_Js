@@ -46,11 +46,11 @@ async function fetchPosts() {
                   if( reponseDelete.ok){
                      console.log(`Post ${posts.id}, supprimé avec succées`)
                      let messageDelete= document.getElementById("confirmationDelPost")
-                     messageDelete.textContent="Post supprimé avec succès"
+                     messageDelete.textContent="Post supprimé avec succès!"
                      postDiv.remove();
                   } else{
                      console.log("error")
-                     messageDelete.textContent="Le Post n'a pas pus être supprimer"
+                     messageDelete.textContent="Le Post n'a pas pus être supprimé!"
                   }
              }
             

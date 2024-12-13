@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: rgb(200, 200, 200);
-    min-height: 80%;
+    min-height: 100%;
 }
 
 header {
@@ -57,11 +57,7 @@ h1 a, h1{
     
     
 }
-#confirmationDelPost{
-    height:12px;
-    font-size: 20px;
-    align-self: center;
-}
+
 #posts{
     margin-top: 10px;
 }
@@ -106,6 +102,16 @@ h1 a, h1{
 #supPost:hover{
     position: relative;
     top: -2px;
+}
+#confirmationDelPost{
+    color: red;
+    border-radius: 15px;
+    margin-top: 40vh;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.279);
+    font-size: 30px;
+    align-self: center;
+    padding: 10px;
 }
 
 footer {
