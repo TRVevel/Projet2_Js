@@ -9,8 +9,6 @@ video {
     padding: 0;
     bottom:0;
   }
-
-/* Contenu principal pour que la page ait assez de hauteur */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -18,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: rgb(200, 200, 200);
-    min-height: 100vh;
+    min-height: 80%;
 }
 
 header {
@@ -31,25 +29,41 @@ header {
     margin: 0 0 0 0;
     background: linear-gradient(320deg, rgb(220, 220, 230), rgb(20, 25, 45))
 }
-header *{
+#home{
+    text-decoration: none;
+    
+}
+#home:hover{
+    text-decoration: underline;
+    
+}
+header #newPostButton{
     color: white;
     text-decoration: none;
-    font-size: 32px;
- 
-}
-header a{
     border-radius: 5px;
     padding: 5px;
     background-color: rgb(140, 150, 190);
     font-size: 16px;
     transition: transform 0.1s ease-in-out;
+ 
 }
-header a:hover{
+header #newPostButton:hover{
     position: relative;
     transform: translateY(-2px); /* Déplace l'élément de 200px vers la droite */
 }
+h1 a, h1{
+    font-size: 32px;
+    color: white;
+    
+    
+}
+#confirmationDelPost{
+    height:12px;
+    font-size: 20px;
+    align-self: center;
+}
 #posts{
-    margin: 10px 10px 40px 10px ;
+    margin-top: 10px;
 }
 .post {
     background-color: rgba(250, 250, 250, 0.9);
@@ -58,13 +72,13 @@ header a:hover{
     border: 1px solid #0000002c;
     border-radius: 8px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+    margin: 10px 10px 40px 10px ;
 }
 
-.post:hover {
-    position: relative;
-    top: -5px;
-    cursor: pointer;
+.user-link {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
 }
 .post h3 {
     margin-top: 0;
@@ -79,14 +93,24 @@ header a:hover{
     text-decoration: underline;
 }
 
-.user-link {
+#supPost{
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 3px solid rgb(255, 0, 0);
+    padding: 5px;
+    color: red;
+    background-color: rgba(255, 255, 255, 0.493);
     display: inline;
-    margin-top: 10px;
-    font-size: 14px;
+    cursor: pointer;
+}
+
+.post:hover {
+    position: relative;
+    top: -5px;
+    cursor: pointer;
 }
 
 footer {
-    
     font-size: 0.8rem;
     min-width: 100%;
     position: fixed;
@@ -95,7 +119,6 @@ footer {
     color: white;
     background: linear-gradient(70deg, rgb(30, 30, 60), rgb(200, 200, 225))
 }
-
 footer *{
     margin-left: 5px;
 }

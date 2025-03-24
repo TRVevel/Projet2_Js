@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New post-QMD.com</title>
+    <link rel="stylesheet" href="./styles/page4.css">
+    <link rel="icon" href="data:;base64,iVBORwOKGO="/>
+
+</head>
+<body>
+  <video autoplay muted loop>
+    <source src="./styles/ressources/background_Video.mp4" type="video/mp4">
+  </video>
+    <header>
+        <h1><a href="./index.html">Réseau Social</a></h1>
+    </header>
+ <main>
+  <h2>Formulaire de création d'un nouveau Post</h2>
+  <form id="postForm">
+    <label for="userId">UserId :</label>
+    <input [type="number"]::-webkit-inner-spin-button{-webkit-appearance:none} placeholder="ex: 18" id="userId" name="userId">
+    <span id="userIdError" class="error"></span>
+    <br>
+
+    <label for="title">Titre : </label>
+    <input type="text" id="title" placeholder="ex: Je vais déposer mon CV à McDo hein"name="title" required>
+    <span id="titleError" class="error"></span>
+    <br>
+
+    <div>
+        <label for="body">Contenu : </label>
+    </div>
+        <textarea id="body" placeholder="ex: Sérieux ce site tient avec de la colle UwHU mais bon, c'est la magie du codage je suppose..." name="body" required></textarea>
+        <span id="bodyError" class="error"></span>
+    <br>
+
+   <button id="boutonCreerPost" type="submit">Créer le Post</button>
+  </form>
+
+  <div id="confirmationMessage" class="confirmation" style="display: none;">
+    <strong>Le post a été créé avec succès !</strong>
+  </div>
+  <div id="infirmationMessage" class="infirmation" style="display: none;">
+    <strong>Le post n'a pas été créé. Revoyez vos données ! !</strong>
+  </div> 
+</main> 
+  <script src="./src/page4.js"></script>  
+  <footer>
+    <p>&copy 2024 Quentin, Dimitry, Mohammed. Tous droits réservés.</p>
+</footer>
+  </body>
+</html>

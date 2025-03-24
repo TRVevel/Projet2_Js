@@ -1,0 +1,124 @@
+video {
+  opacity: 35%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index:-100;
+  padding: 0;
+  bottom:0;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0 0 0 0;
+  background-color: rgb(200, 200, 200);
+  min-height: 100vh;
+  display:  flex;
+  flex-direction: column;
+  
+}
+body h2{
+  margin:0 40px;
+}
+header {
+  color: white;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.501);
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  padding:0 40px ;
+  background: linear-gradient(320deg, rgb(220, 220, 230), rgb(20, 25, 45))
+}
+header *{
+  color: white;
+  text-decoration: none;
+  font-size: 32px;
+
+}
+
+header *:hover{
+    text-decoration: underline;
+ 
+}
+main{
+  box-shadow: 10px 10px 15px rgb(0, 0, 0);
+  padding: 40px;
+  align-self: center;
+  border-radius: 50px;
+  margin: 10px;
+  background-color: rgba(250, 250, 250, 0.9);
+ 
+}
+form{
+  margin-left: 40px;
+}
+
+#postForm #userId{
+  width: 50px;
+}
+#postForm #title{
+  width: 350px;
+}
+#postForm #body{
+  width: 400px;
+  height: 150px;
+  resize: none;
+}
+label {
+  font-weight: bold;
+}
+
+input, textarea {
+  box-shadow: inset 0 1px 2px #eee;
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #919596;
+  border: 1px solid #919596;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  border: 1px solid #919596;
+  background-color: rgb(200, 200, 225);
+  transition: 0.3;
+}
+.confirmation {
+  margin-left: 120px;
+  padding: 10px;
+  color: green;
+  border: 1px solid #d4edda;
+  border-radius: 4px;
+}
+.infirmation {
+  margin-left: 120px;
+  padding: 10px;
+  color: red;
+  border: 1px solid #d4edda;
+  border-radius: 4px;
+}
+.error {
+  color: red;
+  font-size: 12px;
+}
+footer {
+    font-size: 0.8rem;
+    min-width: 100%;
+    position: fixed;
+    padding: 0;
+    bottom:0;
+    color: white;
+    background: linear-gradient(70deg, rgb(30, 30, 60), rgb(200, 200, 225))
+}
+footer *{
+  margin-left: 5px;
+}
+

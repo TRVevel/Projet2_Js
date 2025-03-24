@@ -1,0 +1,128 @@
+video {
+    opacity: 35%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index:-100;
+    padding: 0;
+    bottom:0;
+  }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0 0 0 0;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(200, 200, 200);
+    min-height: 100%;
+}
+
+header {
+    color: white;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.501);
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    padding:0 40px ;
+    margin: 0 0 0 0;
+    background: linear-gradient(320deg, rgb(220, 220, 230), rgb(20, 25, 45))
+}
+#home{
+    text-decoration: none;
+    
+}
+#home:hover{
+    text-decoration: underline;
+    
+}
+header #newPostButton{
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(140, 150, 190);
+    font-size: 16px;
+    transition: transform 0.1s ease-in-out;
+ 
+}
+header #newPostButton:hover{
+    position: relative;
+    transform: translateY(-2px); /* Déplace l'élément de 200px vers la droite */
+}
+h1 a, h1{
+    font-size: 32px;
+    color: white;
+    
+    
+}
+
+#posts{
+    margin-top: 10px;
+}
+.post {
+    background-color: rgba(250, 250, 250, 0.9);
+    margin-bottom: auto;
+    padding: 20px;
+    border: 1px solid #0000002c;
+    border-radius: 8px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 10px 40px 10px ;
+}
+
+.user-link {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.post h3 {
+    margin-top: 0;
+}
+
+.post a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}
+
+#supPost{
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 3px solid rgb(255, 0, 0);
+    padding: 5px;
+    color: red;
+    background-color: rgba(255, 255, 255, 0.493);
+    display: inline;
+    cursor: pointer;
+}
+#supPost:hover{
+    position: relative;
+    top: -2px;
+}
+#confirmationDelPost{
+    color: red;
+    border-radius: 15px;
+    margin-top: 40vh;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.279);
+    font-size: 30px;
+    align-self: center;
+    padding: 10px;
+}
+
+footer {
+    font-size: 0.8rem;
+    min-width: 100%;
+    position: fixed;
+    padding: 0;
+    bottom:0;
+    color: white;
+    background: linear-gradient(70deg, rgb(30, 30, 60), rgb(200, 200, 225))
+}
+footer *{
+    margin-left: 5px;
+}
